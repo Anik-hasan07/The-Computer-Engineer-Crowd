@@ -11,7 +11,6 @@ import user from "./routes/userRoutes.js";
 
 
 //IMPORTING ROUTES
-
 app.use("/api/v1",course)
 app.use("/api/v1",user)
 

@@ -16,7 +16,7 @@ const schema = new mongoose.Schema({
         {   
             title:{
                 title:String,
-                required: true,
+                // required: true,
             },
             description:{
                 type:String,
