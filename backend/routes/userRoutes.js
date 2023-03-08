@@ -1,9 +1,15 @@
 import express from 'express';
-import { getAllUsers } from '../controllers/userController.js';
+import {  changePassword, getMyProfile, login, logout, register, updateProfile } from '../controllers/userController.js';
+import { isAuthenticatedUser } from '../middlewares/auth.js';
 const router = express.Router();
 
 
-router.route("/users").get(getAllUsers)
+router.route("/register").post(register)
+router.route("/login").post(login)
+router.route("/logout").post(logout)
+router.route("/me").get(isAuthenticatedUser,getMyProfile)
+router.route("/changepassword").put(isAuthenticatedUser,changePassword)
+router.route("/updateprofile").put(isAuthenticatedUser,updateProfile)
 
 
 
